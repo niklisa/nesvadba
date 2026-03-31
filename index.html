@@ -1998,10 +1998,10 @@
       .name { font-size: 48px; }
       .tagline { font-size: 64px; }
       /* Make "Локация" match "Дорогие гости!" on small screens */
-      #lokaciya .section-title-sm { font-size: 64px !important; }
+      #lokaciya .section-title-sm { font-size: 68px !important; }
       .message { font-size: 20px; }
       .section { padding: 18px 20px 26px; }
-      .section-title, .section-title-sm { font-size: 64px; }
+      .section-title, .section-title-sm { font-size: 68px; }
       .hero-frame { padding: 10px; }
       .hero-photo-wrap { margin: 10px auto -8px; }
       .hero-photo { aspect-ratio: 1211/1450; }
@@ -2084,10 +2084,11 @@
       .telegram-btn { font-size: 29.06px; line-height: 1; padding: 12px 30px; margin-bottom: 16px; margin-top: 0; }
       .telegram-section .section-title-sm,
       .telegram-section .telegram-text,
-      .telegram-section .telegram-btn { top: -52px; }
+      .telegram-section .telegram-btn { top: -36px; }
       .telegram-wave { margin-top: -6px; }
       .telegram-wave img { width: 100vw; max-width: none; }
       .telegram-signature { margin-top: 30px; }
+      .telegram-btn { margin-bottom: 24px; }
       .final-contact-section { padding: 28px 20px 44px; }
       .final-contact-text { font-size: 22px; }
       .final-contact-btn { min-width: 200px; font-size: 14px; padding: 10px 20px; }
@@ -2107,16 +2108,16 @@
     }
 
     @media (max-width: 768px) {
-      .program-section { padding-top: 22px; }
+      .program-section { padding-top: 8px; margin-top: -8px; }
       .program-timing-canvas { max-width: 900px; margin-top: -2px; }
-      .program-center-element { width: 108%; margin-left: -4%; }
+      .program-center-element { width: 116%; margin-left: -8%; }
       .program-side-star { width: 34px; height: 34px; }
-      .program-side-star.left-1 { left: -24px; top: -2px; width: 34px; height: 34px; }
-      .program-side-star.left-2 { left: 2px; bottom: 70px; width: 24px; height: 24px; }
-      .program-side-star.left-3 { left: -10px; bottom: -8px; width: 18px; height: 18px; }
-      .program-side-star.right-1 { right: -20px; top: 48px; width: 28px; height: 28px; }
-      .program-side-star.right-2 { right: 0; bottom: -4px; width: 34px; height: 34px; }
-      .program-side-star.right-3 { right: -14px; top: -4px; width: 20px; height: 20px; }
+      .program-side-star.left-1 { left: -28px; top: -8px; width: 34px; height: 34px; }
+      .program-side-star.left-2 { left: -4px; bottom: 72px; width: 24px; height: 24px; }
+      .program-side-star.left-3 { left: -14px; bottom: -10px; width: 18px; height: 18px; }
+      .program-side-star.right-1 { right: -24px; top: 44px; width: 28px; height: 28px; }
+      .program-side-star.right-2 { right: -4px; bottom: -6px; width: 34px; height: 34px; }
+      .program-side-star.right-3 { right: -18px; top: -8px; width: 20px; height: 20px; }
     }
 
     @media (max-width: 420px) {
@@ -2643,6 +2644,7 @@
         left: 50.6% !important; /* shift button slightly sideways */
       }
       .date-block .deco-stars-tl { left: 9.5%; }
+      .date-block .deco-candelabra { right: -8px; }
       .date-block .date-luv .l { font-size: 74px !important; }
       .date-block .date-luv .yu,
       .date-block .date-luv .o,
@@ -2734,6 +2736,7 @@
       .date-block .date-luv .m {
         top: 54.8% !important; /* move Ь slightly up (more on very narrow) */
       }
+      .date-block .deco-candelabra { right: -12px; }
       .date-block .date-num {
         left: 66.2% !important;
       }
@@ -2791,7 +2794,7 @@
       #details .details-photo-wrap { margin-top: 36px; }
       .telegram-section .section-title-sm,
       .telegram-section .telegram-text,
-      .telegram-section .telegram-btn { top: -60px; }
+      .telegram-section .telegram-btn { top: -42px; }
       .telegram-wave { margin-top: -12px; }
 
       /* Slightly smaller buttons on very narrow screens */
@@ -2823,6 +2826,40 @@
         width: 30px !important;
         height: 30px !important;
         font-size: 18px !important;
+      }
+      .section-title,
+      .section-title-sm { font-size: 66px; }
+    }
+
+    /* Mobile: fly-in animation for "details" texts below photo */
+    @media (max-width: 768px) {
+      .details-below-photo .details-simple-text.details-simple-left,
+      .details-below-photo .details-simple-text.details-simple-right {
+        opacity: 0;
+        transition: transform 900ms cubic-bezier(0.18, 0.86, 0.22, 1), opacity 700ms ease;
+        will-change: transform, opacity;
+      }
+      .details-below-photo .details-simple-text.details-simple-left {
+        transform: translateX(-46px);
+      }
+      .details-below-photo .details-simple-text.details-simple-right {
+        transform: translateX(46px);
+      }
+      .details-below-photo .details-simple-text.is-fly-visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* Mobile: confirm stars moved away from inputs/buttons */
+      .confirm-star { width: 40px; }
+      .confirm-star.left { left: -18px; top: 208px; }
+      .confirm-star.right { right: -18px; top: 416px; }
+
+      /* Mobile: make the final photo slightly larger */
+      .bottom-wide-photo img {
+        width: 112%;
+        max-width: none;
+        margin-left: -6%;
       }
     }
 
@@ -2987,8 +3024,10 @@
       <div class="burger-menu" id="burgerMenu" aria-hidden="true">
         <a href="#lokaciya">Локация</a>
         <a href="#dresscode">Дресс-код</a>
+        <a href="#program">Программа</a>
         <a href="#details">Пожелания и детали</a>
         <a href="#confirmation">Подтверждение</a>
+        <a href="#contact">Контакт организатора</a>
       </div>
     </header>
 
@@ -3220,7 +3259,7 @@
       <img src="images/bottom-full-photo.png" alt="">
     </div>
 
-    <section class="final-contact-section" aria-label="Контакты организатора">
+    <section class="final-contact-section" id="contact" aria-label="Контакты организатора">
       <p class="final-contact-text">По всем вопросам можно обращаться к нашему организатору:<br>Апполинария</p>
       <a class="final-contact-btn" href="tel:+79688064404" aria-label="Позвонить организатору">КОНТАКТ</a>
     </section>
@@ -3292,6 +3331,32 @@
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') setOpen(false);
       });
+
+      burgerMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => setOpen(false));
+      });
+    })();
+
+    // Details mobile texts fly-in on scroll
+    (function () {
+      if (window.matchMedia('(min-width: 769px)').matches) return;
+      const targets = document.querySelectorAll(
+        '.details-below-photo .details-simple-text.details-simple-left, .details-below-photo .details-simple-text.details-simple-right'
+      );
+      if (!targets.length) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-fly-visible');
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.24, rootMargin: '0px 0px -8% 0px' }
+      );
+
+      targets.forEach((el) => observer.observe(el));
     })();
 
     // Hero love letters animation (triggered when the message comes into view)
@@ -3300,31 +3365,45 @@
       const dateLuv = document.querySelector('.date-luv');
       if (!trigger || !dateLuv) return;
 
-      // Do not start animation on initial load: wait until the user scrolls.
-      let hasUserScrolled = window.scrollY > 80;
-      if (!hasUserScrolled) {
-        window.addEventListener(
-          'scroll',
-          () => {
-            if (window.scrollY > 80) hasUserScrolled = true;
-          },
-          { passive: true }
-        );
-      }
+      let animated = false;
+      let observer = null;
 
-      const observer = new IntersectionObserver(
+      const animateLove = () => {
+        if (animated) return;
+        animated = true;
+        dateLuv.classList.add('is-love-animated');
+        if (observer) observer.disconnect();
+        window.removeEventListener('scroll', checkAndAnimate);
+        window.removeEventListener('resize', checkAndAnimate);
+      };
+
+      const checkAndAnimate = () => {
+        if (animated) return;
+        const rect = trigger.getBoundingClientRect();
+        const viewH = window.innerHeight || document.documentElement.clientHeight;
+        const inView = rect.top < viewH * 0.9 && rect.bottom > viewH * 0.1;
+        const passedTrigger = rect.top < viewH * 0.55;
+        if (inView || passedTrigger) {
+          animateLove();
+        }
+      };
+
+      observer = new IntersectionObserver(
         (entries) => {
           for (const entry of entries) {
-            if (entry.isIntersecting && hasUserScrolled) {
-              dateLuv.classList.add('is-love-animated');
-              observer.disconnect();
+            if (entry.isIntersecting) {
+              animateLove();
               break;
             }
           }
         },
-        { threshold: 0.25 }
+        { threshold: 0.12, rootMargin: '0px 0px -12% 0px' }
       );
       observer.observe(trigger);
+
+      window.addEventListener('scroll', checkAndAnimate, { passive: true });
+      window.addEventListener('resize', checkAndAnimate);
+      window.requestAnimationFrame(checkAndAnimate);
     })();
 
     // Location photo slider (left/right buttons)

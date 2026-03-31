@@ -2010,11 +2010,14 @@
       .location-prev-btn { top: 47%; }
       #dresscode.section { padding-top: 14px; }
       #details.section { margin-top: -36px; }
-      .location-photo-wrap { overflow: hidden; }
+      #lokaciya .section-title-sm { margin-top: 8px; }
+      .location-photo-wrap { overflow: visible; }
       .section-image.location-photo {
-        width: 112%;
-        max-width: none;
-        margin-left: -6%;
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        aspect-ratio: auto;
+        object-fit: contain;
       }
       .date-block { min-height: 470px; padding: 0 20px 8px; margin: 18px 0 0; }
       .date-block .date-luv .l { font-size: 80px; }
@@ -2117,7 +2120,7 @@
       .program-section { padding-top: 6px; margin-top: -14px; }
       .program-section .section-title-sm {
         white-space: nowrap;
-        font-size: clamp(52px, 8.2vw, 66px);
+        font-size: clamp(56px, 8.8vw, 70px);
       }
       .program-timing-canvas { max-width: 900px; margin-top: -2px; }
       .program-center-element { width: 116%; margin-left: -8%; }
@@ -2861,10 +2864,13 @@
         transform: translateX(0);
       }
       .details-below-photo {
-        gap: clamp(22px, 4.8vw, 38px);
+        gap: clamp(30px, 6vw, 52px);
       }
       .details-below-photo .details-simple-text.details-simple-right {
-        margin-top: 8px;
+        margin-top: 14px;
+      }
+      .details-below-photo .details-simple-text.details-simple-center {
+        margin-top: 12px;
       }
       .details-below-photo .details-note-star.s1 { left: 1%; top: 0; }
       .details-below-photo .details-note-star.s2 { left: 6%; top: 12%; }
@@ -2878,9 +2884,11 @@
       .details-below-photo .details-note-star.s10 { right: 16%; top: 46%; }
 
       /* Mobile: confirm stars moved away from inputs/buttons */
-      .confirm-star { width: 40px; }
-      .confirm-star.left { left: 6%; top: -8px; }
-      .confirm-star.right { right: 6%; top: -8px; }
+      .confirm-star { width: 34px; }
+      .confirm-star.left { left: 8%; top: -10px; }
+      .confirm-star.right { right: 8%; top: -10px; }
+      .confirm-star.mid-a { left: 46%; top: 154px; }
+      .confirm-star.mid-b { left: 56%; top: 232px; width: 28px; }
 
       /* Mobile: make the final photo slightly larger */
       .bottom-wide-photo img {
@@ -2888,6 +2896,19 @@
         max-width: none;
         margin-left: -6%;
       }
+    }
+
+    /* Keep all decorative stars straight (no rotation) */
+    .deco-star-tr,
+    .details-intro-star,
+    .details-note-star,
+    .program-side-star,
+    .confirm-star,
+    .details-after-wave-star-left,
+    .details-after-wave-star-right,
+    .details-money-star,
+    .details-money-cross {
+      rotate: 0deg;
     }
 
     @media (min-width: 769px) and (max-width: 1099px) {
@@ -3235,6 +3256,8 @@
       <div class="confirm-form">
         <img src="images/deco-star.svg" alt="" class="confirm-star left" aria-hidden="true">
         <img src="images/deco-star.svg" alt="" class="confirm-star right" aria-hidden="true">
+        <img src="images/deco-star.svg" alt="" class="confirm-star mid-a" aria-hidden="true">
+        <img src="images/deco-star.svg" alt="" class="confirm-star mid-b" aria-hidden="true">
 
         <iframe name="confirmFrame" id="confirmFrame" style="display:none"></iframe>
 

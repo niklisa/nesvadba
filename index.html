@@ -1991,7 +1991,7 @@
       .burger-btn { display: block; align-self: auto; }
       .burger-menu { right: 20px; top: 46px; min-width: 240px; }
       /* Move names lower on narrow screens */
-      .names-row { bottom: 30px; }
+      .names-row { bottom: 24px; }
       .logo-monogram { font-size: 40px; }
       .logo-monogram-img { height: 52px; }
       .logo-text { font-size: 24px; }
@@ -2391,21 +2391,8 @@
     .confirm-actions.presence {
       margin-top: 52px;
       margin-bottom: 26px;
-      position: relative;
     }
     .confirm-actions.allergies { margin-top: 22px; margin-bottom: 10px; }
-    .confirm-btn-star {
-      display: none;
-      position: absolute;
-      width: 20px;
-      height: auto;
-      top: 50%;
-      transform: translateY(-50%);
-      pointer-events: none;
-      opacity: 0.95;
-    }
-    .confirm-btn-star.left { left: calc(50% - 208px); }
-    .confirm-btn-star.right { right: calc(50% - 208px); }
     .confirm-submit {
       border: 1px solid rgba(127, 121, 109, 0.65);
       background: #fff;
@@ -2530,6 +2517,10 @@
       .confirm-star { width: 52px; }
       .confirm-star.left { left: -8px; top: 254px; }
       .confirm-star.right { right: -8px; top: 394px; }
+    }
+    @media (min-width: 769px) {
+      .confirm-star.mid-a,
+      .confirm-star.mid-b { display: none; }
     }
 
     @media (max-width: 768px) {
@@ -2819,7 +2810,7 @@
       .date-block .date-luv.is-love-animated .m { transition-delay: 1040ms; }
 
       /* Extra downshift for bride/groom names */
-      .names-row { bottom: 24px; }
+      .names-row { bottom: 18px; }
 
       /* Dress-code CTA text should match the "money" blue style */
       .dresscode-section .section-text.dresscode-cta-text {
@@ -2938,11 +2929,8 @@
       .confirm-star { width: 34px; }
       .confirm-star.left { left: 2%; top: -92px; }
       .confirm-star.right { right: 2%; top: -92px; }
-      .confirm-star.mid-a { left: 6%; top: 138px; width: 30px; }
+      .confirm-star.mid-a { display: none; }
       .confirm-star.mid-b { display: none; }
-      .confirm-actions.presence .confirm-btn-star { display: block; }
-      .confirm-actions.presence .confirm-btn-star.left { left: calc(50% - min(46vw, 174px)); }
-      .confirm-actions.presence .confirm-btn-star.right { right: calc(50% - min(46vw, 174px)); }
 
       /* Mobile: make the final photo slightly larger */
       .bottom-wide-photo img {
@@ -2972,11 +2960,8 @@
       }
       .confirm-star.left,
       .confirm-star.right { top: -84px; }
-      .confirm-star.mid-a { top: 126px; }
+      .confirm-star.mid-a { display: none; }
       .confirm-star.mid-b { display: none; }
-      .confirm-actions.presence .confirm-btn-star { width: 18px; }
-      .confirm-actions.presence .confirm-btn-star.left { left: calc(50% - min(46vw, 154px)); }
-      .confirm-actions.presence .confirm-btn-star.right { right: calc(50% - min(46vw, 154px)); }
     }
 
     /* Keep all decorative stars straight (no rotation) */
@@ -3377,11 +3362,9 @@
           </div>
 
           <div class="confirm-actions presence">
-            <img src="images/deco-star.svg" alt="" class="confirm-btn-star left" aria-hidden="true">
             <button type="submit" class="confirm-submit confirm-submit-presence" id="confirmSubmitPresence">
               ПОДТВЕРДИТЬ ПРИСУТСТВИЕ
             </button>
-            <img src="images/deco-star.svg" alt="" class="confirm-btn-star right" aria-hidden="true">
           </div>
 
           <div class="confirm-message" id="confirmMessage"></div>
